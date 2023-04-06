@@ -1,17 +1,41 @@
 table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-tr {
-    border: 2px solid black;
-    background-color: darkseagreen;
-    padding: 10px;
-    }
-    .green {
-        color: green;
-    }
+table,
+tr,
+td {
+  border: 2px solid rgb(5, 5, 5);
+  background-color: darkseagreen;
+  padding: 10px;
+}
+.green {
+  color: green;
+}
 
-    .blue{
-        color: blue;
+.blue {
+  color: blue;
+}
+
+.card-img-top {
+  aspect-ratio: 1/1 !important;
+  object-fit: cover;
+}
+#imgs h4 {
+  color: blue;
+}
+article img {
+  height: 200px;
+}
+/* ************* responsive***************** */
+@media only screen and (max-width: 600px) {
+    section {
+        display: block;
+      }
+    article img {
+      background-color: lightblue;
+
     }
+  }
+

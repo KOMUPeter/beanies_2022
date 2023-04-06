@@ -1,39 +1,45 @@
 <?php
-include_once "variable.php";
-include_once "function.php";
-
+$pageTitle = "Accueil";
+include "includes/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beanies</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <td>key</td>
-                <td>Name</td>
-                <td>Price HT</td>
-                <td>TVA</td>
-                <td>Price TTC</td>
-                <td>Description</td>
-            </tr>
-        </thead>
-        <tbody>
-              <?php foreach ($bonnies as $key => $bonnet) {
-                // call function minimise 
-                minimise($key, $bonnet);
-            } 
-        var_dump($bonnies)
-        ?>
-        </tbody>
-    </table>
-    
-</body>
-</html>
+<section class="d-flex gap-3 justify-content-center">
+<?php 
+// show images
+    $i = 0;
+    foreach($bonnies as $key =>$bonnet){
+        $i++;
+        if ($i >= 6) {
+            break;
+        }
+?> 
+<!-- SHOW IMAGES -->
+   <article class="card text-center col-12" style="width: 18rem;">
+      
+        <img src="<?php echo $bonnet['image'];?>" class="card-img-top" alt="images">
+           
+        <div class="card-body">
+           
+        <h4 class="card-title"> <?php echo $bonnet['name'];?> </h4>
+      
+        <p class="card-text"><?php echo number_format($bonnet['price'],2,',','');?>€</p>
+         
+        <p class="card-text"><?php echo  $bonnet['description'];?></p>
+         
+        <a href="#" class="btn btn-primary">Buy Now</a>
+      
+   </div>
+     
+</article>
+<?php
+  }
+?> 
+</section>
+
+<div class= "d-block">
+  <a href="list.php" class="d-inline p-2 bg-dark text-white text-decolation-none">See all products</a>
+</div>
+
+<?php
+include "includes/footer.php";
+?>
