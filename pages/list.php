@@ -1,7 +1,6 @@
 <?php
-$pageTitle = "Liste";
-include "includes/header.php";
-?>
+$pageTitle = "My table List";
+ ?>
     <table>
         <thead>
             <tr>
@@ -11,6 +10,7 @@ include "includes/header.php";
                 <td>TVA</td>
                 <td>Price TTC</td>
                 <td>Description</td>
+                <td>Add to cart</td>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +22,3 @@ include "includes/header.php";
         ?>
         </tbody>
     </table>
-    <?php
-include "includes/footer.php";
-?>

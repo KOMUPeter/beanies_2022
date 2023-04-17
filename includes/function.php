@@ -11,7 +11,7 @@ function tva(): float{
 function minimise(int $key, array $bonnet): void {
     ?>
     <tr>
-       <td><?php echo ++$key;?></td>
+       <td><?php echo $key;?></td>
 
        <td> <?php echo $bonnet['name'];?></td>
 
@@ -27,6 +27,10 @@ function minimise(int $key, array $bonnet): void {
        ?>> <?php echo number_format($bonnet['price'], 2, '.', ' ');?>€</td>
 
        <td> <?php echo $bonnet['description'];?></td>
+       <!-- adding cart -->
+       <!-- WHY ADD &id after cart.php -->
+       <td> <a href="?page=cart&id=<?php echo $key;?>"class="btn btn-primary">Buy Now</a></td>
+    </ul>
     </tr>
     <?php
 }
