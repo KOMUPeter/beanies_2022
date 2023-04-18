@@ -18,7 +18,7 @@ if (isset($_POST['email'])) {
     if (empty($email)) {
         $errors []= "email can not be empty";
     }elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors []= "Please enter a vilid email";
+        $errors []= "Please enter a valid email";
     }
 }
 
@@ -49,7 +49,7 @@ if (isset($_POST['message'])) {
     <input type="email" id="email" name="email" placeholder = "example@email.com">
     </div>
     <label for="message">Your Message:</label>
-    <textarea name="message" form="usrform"></textarea>
+    <textarea name="message"></textarea>
     </div>
 <div>
    <button type="submit" class = "btn btn-primary">Send</button>
