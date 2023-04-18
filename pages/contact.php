@@ -45,6 +45,7 @@ if (isset($_POST['message'])) {
     <input type="text" id="subject" name="subject" placeholder = "Subject..." >
     </div>
     <div>
+        
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder = "example@email.com">
     </div>
