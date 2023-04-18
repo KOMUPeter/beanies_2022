@@ -5,6 +5,7 @@ $pages = [
     'list'   => "My list table",
     'login'  => "Connection",
     'cart'   => "my cart list",
+    'contact' => "Contact Us",
     'logout' => "",
 ];
 

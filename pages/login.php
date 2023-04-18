@@ -1,7 +1,4 @@
 <?php
-$pageTitle = "connection";
- ?>
-<?php
 
 if (isset($_POST['username'])) {
     // declaire password and username without spacing
@@ -11,45 +8,37 @@ if (isset($_POST['username'])) {
 
     if ($username != $defaultUsername) {
         $errors[] = 'Invalid username';
-    } 
-    elseif (empty($password)) {
+    } elseif (empty($password)) {
         $errors[] = 'empty password';
-    } 
-    elseif ($password != $defaultPassword) {
+    } elseif ($password != $defaultPassword) {
         $errors[] = 'Wrong password';
-    }
-    
-    elseif (!empty($username) && $password = $defaultPassword)  {
+    } elseif (!empty($username) && $password = $defaultPassword) {
         $_SESSION['username'] = $_POST['username'];
         header('Location: index.php?login=success');
-    } 
-   
+    }
 }
-
-
-
 ?>
-<?php foreach ($errors as $error) {?>
+
+<?php foreach ($errors as $error) { ?>
     <div class="alert alert-danger" role="alert">
         <?php echo $error; ?>
     </div>
-<?php
-}?>
+    <?php
+} ?>
 
-
-<form action="" method = "post" class="container">
-<h3>Sign Up</h3>
-<ul>
-    <li>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" placeholder = "Name..." required>
-    </li>
-    <li>
-    <label for="password">Pass Word:</label>
-    <input type="password" id="password" name="password" placeholder = "**********">
-    </li>
-</ul>
-<div>
-    <input type="submit" value="Connection">
-</div>
-</form> 
+<form action="" method="post" class="container">
+    <h3>Sign Up</h3>
+    <ul>
+        <li>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Name..." required>
+        </li>
+        <li>
+            <label for="password">Pass Word:</label>
+            <input type="password" id="password" name="password" placeholder="**********">
+        </li>
+    </ul>
+    <div>
+        <input type="submit" value="Connection">
+    </div>
+</form>

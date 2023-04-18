@@ -1,8 +1,4 @@
-<?php
-$pageTitle = "my cart list";
- ?>
-
- <!-- =========>> PROBLEME AVEC LE PANIER CAN'T SEE THE list of added products  -->
+<!-- =========>> PROBLEME AVEC LE PANIER CAN'T SEE THE list of added products  -->
  <?php 
    if (!isset($_SESSION['cart'])){ // if $_SESSION['cart'] is not defined
       $_SESSION['cart'] = [];      // then $_SESSION['cart']  equals empty table  
@@ -39,7 +35,7 @@ $pageTitle = "my cart list";
    $total =0;
    foreach($_SESSION['cart'] as $id => $quantity){
         $bonnet = $bonnies[$id];
-        $price = $bonnet['price']* $quantity;
+         $price = $bonnet['price'] * $quantity;
         $total += $price;
         $allTotal += $price;
 ?> <tr>
