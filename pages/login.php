@@ -26,7 +26,7 @@ if (isset($_POST['username'])) {
     <?php
 } ?>
 
-<form action="" method="post" class="container">
+<form id="login-form" action="" method="post" class="container">
     <h3>Sign Up</h3>
     <ul>
         <li>

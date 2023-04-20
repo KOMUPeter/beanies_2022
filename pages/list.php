@@ -11,11 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($bonnies as $key => $bonnet) {
+        <?php foreach ($beanies as $id => $bonnet) {
             // call function minimise 
-            minimise($key, $bonnet);
+            minimise($bonnet, $id);
         }
-        // var_dump($bonnies)
+        // var_dump($bean)
         ?>
     </tbody>
 </table>

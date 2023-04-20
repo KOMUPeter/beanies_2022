@@ -38,18 +38,18 @@ if (isset($_POST['message'])) {
     </div>
 <?php
 }?>
-<form id="contact" action="" method = "post" class="container">
+<form id="form-contact" action="" method = "post" class="container">
 <h3>Contact us </h3>
     <div>
-    <label for="subject">Subject:</label>
+    <label for="subject">Write a Content:</label>
     <input type="text" id="subject" name="subject" placeholder = "Subject..." >
     </div>
     <div>
-        
-    <label for="email">Email:</label>
+    <label for="email">Enter Your Email:</label>
     <input type="email" id="email" name="email" placeholder = "example@email.com">
     </div>
-    <label for="message">Your Message:</label>
+    <div>
+    <label for="message">Your a Message:</label>
     <textarea name="message"></textarea>
     </div>
 <div>
