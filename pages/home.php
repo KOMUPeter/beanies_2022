@@ -2,7 +2,7 @@
   <?php
   // show images
   $i = 0;
-  foreach ($bonnies as $key => $bonnet) {
+  foreach ($beanies as $key=> $bonnet) {
     $i++;
     if ($i >= 6) {
       break;
@@ -11,23 +11,23 @@
     <!-- SHOW IMAGES -->
     <article class="card text-center col-12" style="width: 18rem;">
 
-      <img src="<?php echo $bonnet['image']; ?>" class="card-img-top" alt="images">
+      <img src="<?php echo $bonnet->getImage(); ?>" class="card-img-top" alt="images">
 
       <div class="card-body">
 
         <h4 class="card-title">
-          <?php echo $bonnet['name']; ?>
+          <?php echo $bonnet->getName(); ?>
         </h4>
 
         <p class="card-text">
-          <?php echo number_format($bonnet['price'], 2, ',', ''); ?>€
+          <?php echo number_format($bonnet->getPrice(), 2, ',', ''); ?>€
         </p>
 
         <p class="card-text">
-          <?php echo $bonnet['description']; ?>
+          <?php echo $bonnet->getDescription(); ?>
         </p>
 
-        <a href="?page=cart&id=<?php echo $key; ?>" class="btn btn-primary">Buy Now</a>
+        <a href="?page=cart&id=<?php echo $bonnet->getId(); ?>" class="btn btn-primary">Buy Now</a>
 
       </div>
 

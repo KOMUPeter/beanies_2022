@@ -1,37 +1,59 @@
 <?php
 // function to calculate price before tva
-function withoutVAT(float $price): float{
-    return $price/1.2;
+function withoutVAT(float $price): float
+{
+    return $price / 1.2;
 }
 // function tva
-function tva(): float{
+function tva(): float
+{
     return 20;
 }
 // function minimise the code
-function minimise(int $key, array $bonnet): void {
+function minimise(object $bonnet, int $id): void
+{
     ?>
     <tr>
-       <td><?php echo $key;?></td>
+        <td>
+            <?php echo $bonnet->getId(); ?>
+        </td>
 
-       <td> <?php echo $bonnet['name'];?></td>
+        <td>
+            <?php echo $bonnet->getName(); ?>
+        </td>
 
-       <td> <?php echo number_format(withoutVAT($bonnet['price']), 2, '.', ' ') ;?>€</td>
+        <td>
+            <?php echo number_format(withoutVAT($bonnet->getPrice()), 2, '.', ' '); ?>€
+        </td>
 
-       <td> <?php echo number_format(tva($bonnet['price']), 2, '.', ' ') ;?>%</td>
+        <td>
+            <?php echo number_format(tva(), 2, '.', ' '); ?>%
+        </td>
 
-       <td <?php if ( $bonnet['price'] <= 12) {
-           echo 'class = "green"';
-       } elseif ( $bonnet['price'] >= 12){
-           echo 'class = "blue"';
-       }
-       ?>> <?php echo number_format($bonnet['price'], 2, '.', ' ');?>€</td>
+        <td <?php if ($bonnet->getPrice() <= 12) {
+            echo 'class = "green"';
+        } elseif ($bonnet->getPrice() >= 12) {
+            echo 'class = "blue"';
+        }
+        ?>> <?php echo number_format($bonnet->getPrice(), 2, '.', ' '); ?>€</td>
 
-       <td> <?php echo $bonnet['description'];?></td>
-       <!-- adding cart -->
-       <!-- WHY ADD &id after cart.php -->
-       <td> <a href="?page=cart&id=<?php echo $key;?>"class="btn btn-primary">Buy Now</a></td>
-    </ul>
+        <td>
+            <?php echo $bonnet->getDescription(); ?>
+        </td>
+        <!-- adding cart -->
+
+        <td> <a href="?page=cart&id=<?php echo $bonnet->getId(); ?>" class="btn btn-primary">Buy Now</a></td>
+        </ul>
     </tr>
     <?php
 }
 
+function findById(array $beanies, int $id): ?Beanie
+{
+    foreach ($beanies as $bonnet) {
+        if ($bonnet->getId() == $id) {
+            return $bonnet;
+        }
+    }
+    return null;
+}
