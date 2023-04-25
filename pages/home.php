@@ -37,6 +37,6 @@
   ?>
 </section>
 
-<div class="d-block">
+<div class="block ">
   <a href="?page=list" class="d-inline p-2 bg-dark text-white text-decolation-none">See all products</a>
 </div>
