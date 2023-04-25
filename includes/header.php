@@ -30,7 +30,7 @@ require_once "includes/function.php";
           <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="?page=list">Table Price</a>
+          <a class="nav-link active" aria-current="page" href="?page=list">Price List</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="?page=cart">Add to Cart</a>
@@ -41,11 +41,11 @@ require_once "includes/function.php";
         </li>
         <?php } else { ?> 
           <li class="nav-item">
-            <a class="nav-link" href="?page=login">Sign In</a>
+            <a class="nav-link" href="?page=login">Login</a>
           </li>
           <?php } ?> 
           <li class="nav-item">
-            <a class="nav-link" href="?page=logout">Sign Out</a>
+            <a class="nav-link" href="?page=logout">Log out<i class="fas fa-utensil-fork    "></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?page=contact">Contact</a>

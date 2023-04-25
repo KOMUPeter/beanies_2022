@@ -1,6 +1,6 @@
 /* **************** general css *************** */
 .container {
-    width: 80%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -9,10 +9,6 @@ a {
   text-decoration: none;
 }
 
-/* ****************  main css *************** */
-nav {
-  color: white;
-}
 form {
   text-align: center;
   background-color: rgba(121, 129, 126, 0.24);
@@ -41,6 +37,18 @@ form div input {
   padding: 5px;
   width: 100px;
 }
+
+/* ****************  main css *************** */
+nav {
+  color: white;
+}
+/* ******contact page****** */
+#contact form input {
+  width: 100%;
+} 
+#form-contact {
+  height: 70vh;
+}
 #form-contact input, #form-contact textarea{
   outline: 0;
   width: 70%;
@@ -48,11 +56,17 @@ form div input {
 }
 #table-cart {
   width: 85%;
+  height: 70vh;
 }
+/********* list.php **********/
 table {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
+}
+#list-form {
+  max-width: 85%;
+  margin-bottom: 40px;
 }
 table,
 tr,
@@ -79,16 +93,22 @@ td {
 article img {
   height: 200px;
 }
-#contact form input {
-  width: 100%;
-} 
+/* ****** #login-form ******* */
+#login-form {
+  height: 70vh;
+}
+/******* footer *********/
 footer {
-  background-color: black;
+  background-color: rgb(12, 8, 27);
   color: white;
   text-align: center;
   height: 100px;
-  align-items: center;
   margin-top: 20px;
+}
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
 }
 /* ************* responsive***************** */
 @media only screen and (max-width: 600px) {

@@ -30,10 +30,10 @@ if (isset($_GET['id'])) { // THIS MEANS WHEN A CLIENT CLIKS TO BUY AN ITEM
 if (isset($_GET['mode']) && $_GET['mode'] == 'empty') { //EMPTY items cart
    $_SESSION['cart'] = [];
 }
-var_dump($_SESSION['cart']);
+// var_dump($_SESSION['cart']);
 ?>
 
-<table id="table-cart">
+<table id="table-cart" class="container">
    <!--  create a table of added carts  -->
    <thead>
       <tr>
