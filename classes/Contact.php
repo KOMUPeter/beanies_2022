@@ -1,6 +1,7 @@
 <?php
 class Contact
 {
+	protected int $id;
 	protected string $subject;
 	protected string $email;
 	protected string $message;
@@ -18,6 +19,17 @@ class Contact
 		if (isset($postMethod['message'])) {
 			$this->setMessage(trim($postMethod['message']));
 		}
+	}
+	
+	public function getId(): ?int
+	{
+		return $this->id;
+	}
+	
+	public function setId(?int $id): self
+	{
+		$this->id = $id;
+		return $this;
 	}
 
 	public function getSubject(): string

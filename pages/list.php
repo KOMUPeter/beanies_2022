@@ -1,43 +1,24 @@
 <?php
+$beanieFilter = new BeanieFilter($_POST, $beanies); // create new class
+
 $BeaniesFiltered = [];
 $BeaniesFiltered = $beanies;
 $minPrice = null;
 $maxPrice = null;
 $material = null;
 $size = null;
-var_dump($_POST);
-if (!empty($_POST['minPrice'])) {
-    $minPrice = floatval($_POST["minPrice"]);
-    // to filter the price with minimum indicated choosen by the user
-    $BeaniesFiltered = array_filter($BeaniesFiltered, function (Beanie $bonnet) use ($minPrice) {
-        return $bonnet->getPrice() >= $minPrice;
-    });
-}
-if (!empty($_POST['maxPrice'])) {
-    $maxPrice = floatval($_POST["maxPrice"]);
-    // to filter the price with maximum indicated choosen by the user
-    $BeaniesFiltered = array_filter($BeaniesFiltered, function (Beanie $bonnet) use ($maxPrice) {
-        return $bonnet->getPrice() <= $maxPrice;
-    });
-}
-if (!empty($_POST['material'])) {
-    $material = trim($_POST["material"]);
-    // choose materials
-    $BeaniesFiltered = array_filter($BeaniesFiltered, function (Beanie $bonnet) use ($material) {
-        return in_array($material, $bonnet->getMaterials());
-    });
-}
+// var_dump($getMaterials());
 ?>
 <form id="list-form" action="" method="post" class="container">
     <h3>Sign Up</h3>
     <ul>
         <li>
             <label for="minPrice">Min Price:</label>
-            <input type="number" id="minPrice" name="minPrice" placeholder="0,00" value="<?= $minPrice; ?>">
+            <input type="number" id="minPrice" name="minPrice" placeholder="0,00" value=<?= $beanieFilter->getMinPrice(); ?>>
         </li>
         <li>
             <label for="maxPrice">Max Price:</label>
-            <input type="number" id="maxPrice" name="maxPrice" placeholder="0,00" value="<?= $maxPrice; ?>">
+            <input type="number" id="maxPrice" name="maxPrice" placeholder="0,00" value=<?= $beanieFilter->getMaxPrice(); ?>>
         </li>
         <!-- adding material in the list -->
         <li>
@@ -52,7 +33,7 @@ if (!empty($_POST['material'])) {
                           echo "selected";
                       }
                       ?>
-                    ><?= $name; ?></option>
+                  ><?= $name; ?></option>
                     <?php
                 } ?>
             </select>
@@ -63,12 +44,13 @@ if (!empty($_POST['material'])) {
             <select name="size" id="size">
                 <option value="">Choose a Size</option>
                 <?php
-                foreach (Beanie::SIZES_AVAILABLE as $value => $name) { ?>
+                foreach (Beanie::SIZES_AVAILABLE as $value ) { ?>
                     <option value="<?= $value; ?>" <?php
-                      if ($name == $size) {
+                      if ($value == $size) {
                           echo 'selected';
                       }
-                      ?>><?= $name; ?></option>
+                      ?>><?= $value; ?>
+                    </option>
                     <?php
                 } ?>
             </select>
@@ -89,7 +71,7 @@ if (!empty($_POST['material'])) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($BeaniesFiltered as $id => $bonnet) {
+        <?php foreach ($beanieFilter->getBeaniesFiltered() as $id => $bonnet) {
             // call function minimise 
             minimise($bonnet, $id);
         }
